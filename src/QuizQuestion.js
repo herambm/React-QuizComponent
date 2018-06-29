@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import QuizQuestionButton from './QuizQuestionButton.js'
 
 const question_style = {
   textAlign: 'center',
@@ -18,10 +19,10 @@ class QuizQuestion extends Component {
           </section>
           <section style = {options_style}>
             <ul>
-              <li>{this.props.quiz_question.answer_options[0]}</li>
-              <li>{this.props.quiz_question.answer_options[1]}</li>
-              <li>{this.props.quiz_question.answer_options[2]}</li>
-              <li>{this.props.quiz_question.answer_options[3]}</li>
+              <QuizQuestionButton button_text = {this.props.quiz_question.answer_options[0]} />
+              <QuizQuestionButton button_text = {this.props.quiz_question.answer_options[1]} />
+              <QuizQuestionButton button_text = {this.props.quiz_question.answer_options[2]} />
+              <QuizQuestionButton button_text = {this.props.quiz_question.answer_options[3]} />
             </ul>
           </section>
         </main>
