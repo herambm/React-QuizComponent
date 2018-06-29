@@ -12,19 +12,19 @@ const options_style = {
 class QuizQuestion extends Component {
   render() {
       return (
-        <div>
-          <div>
+        <main>
+          <section>
             <p style = {question_style}>{this.props.quiz_question.instruction_text}</p><br />
-          </div>
-          <div style = {options_style}>
+          </section>
+          <section style = {options_style}>
             <ul>
               <li>{this.props.quiz_question.answer_options[0]}</li>
               <li>{this.props.quiz_question.answer_options[1]}</li>
               <li>{this.props.quiz_question.answer_options[2]}</li>
               <li>{this.props.quiz_question.answer_options[3]}</li>
             </ul>
-          </div>
-        </div>
+          </section>
+        </main>
       );
   }
 }
