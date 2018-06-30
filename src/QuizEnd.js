@@ -3,12 +3,16 @@ import React, {Component} from 'react'
 const quiz_end_style = {
   textAlign : 'center'
 };
+
 class QuizEnd extends Component {
-    render() {
+  handleResetQuiz(){
+    this.props.resetClickHandler();
+  }
+  render() {
       return (
         <div style = {quiz_end_style}>
           <p>Thanks for playing!</p>
-          <a href=''>Reset Quiz</a>
+          <a href='' onClick = {this.handleResetQuiz.bind(this)}>Reset Quiz</a>
         </div>
       );
     }
