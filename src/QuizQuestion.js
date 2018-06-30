@@ -11,6 +11,11 @@ const options_style = {
   backgroundColor : 'blue'
 };
 class QuizQuestion extends Component {
+  handleClick(buttonText) {
+    if(buttonText === this.props.quiz_question.answer) {
+      this.props.showNextQuestionHandler();
+    }
+  }
   render() {
       return (
         <main>
@@ -19,10 +24,11 @@ class QuizQuestion extends Component {
           </section>
           <section style = {options_style}>
             <ul>
-              <QuizQuestionButton button_text = {this.props.quiz_question.answer_options[0]} />
-              <QuizQuestionButton button_text = {this.props.quiz_question.answer_options[1]} />
-              <QuizQuestionButton button_text = {this.props.quiz_question.answer_options[2]} />
-              <QuizQuestionButton button_text = {this.props.quiz_question.answer_options[3]} />
+              {this.props.quiz_question.answer_options.map((answer_option, index) => {
+                return (
+                  <QuizQuestionButton key = {index} button_text = {answer_option} clickHandler = {this.handleClick.bind(this)}/>
+                );
+              })}
             </ul>
           </section>
         </main>
