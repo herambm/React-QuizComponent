@@ -5,14 +5,14 @@ const quiz_end_style = {
 };
 
 class QuizEnd extends Component {
-  handleResetQuiz(){
+  handleResetClick(){
     this.props.resetClickHandler();
   }
   render() {
       return (
         <div style = {quiz_end_style}>
           <p>Thanks for playing!</p>
-          <a href='' onClick = {this.handleResetQuiz.bind(this)}>Reset Quiz</a>
+          <a href='' onClick = {this.handleResetClick.bind(this)}>Reset Quiz</a>
         </div>
       );
     }
